@@ -1,14 +1,11 @@
 ﻿using System;
+using First_App.Math;
 
 namespace First_App
 {
 
     class Program
     {
-
-
-       
-
 
 
         static void Main()
@@ -19,6 +16,9 @@ namespace First_App
             john.Introduce();
 
 
+            Calculator calculator = new Calculator();
+            var result = calculator.Add(3, 4);
+            Console.WriteLine(result);
         }
 
 
@@ -33,7 +33,7 @@ namespace First_App
 
         public void Introduce()
         {
-            Console.WriteLine("My name is " + FirstName + "" + LastName);
+            Console.WriteLine("My name is " + FirstName + " " + LastName);
         }
 
 
