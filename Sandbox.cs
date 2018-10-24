@@ -18,18 +18,24 @@ namespace Sandbox
 
     public class User
     {
-       
+        private string[] UserName;
 
         public void GetUserInfo()
         {
 
             Console.WriteLine("Please write your first name!");
             string infoFirst = Console.ReadLine();
-            Console.WriteLine(infoFirst);
-
+           
             Console.WriteLine("Please write your last name!");
             string infoLast = Console.ReadLine();
-            Console.WriteLine(infoLast);
+
+
+            string[] UserName = new string[2] { infoFirst, infoLast };
+
+            var fullName = string.Format("Hello {0} {1}", infoFirst, infoLast);
+
+            Console.WriteLine(fullName);
+            Console.WriteLine(UserName);
 
 
         }
