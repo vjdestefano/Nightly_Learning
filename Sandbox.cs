@@ -18,7 +18,7 @@ namespace Sandbox
 
     public class User
     {
-        private string[] UserName;
+        
 
         public void GetUserInfo()
         {
@@ -30,12 +30,13 @@ namespace Sandbox
             string infoLast = Console.ReadLine();
 
 
-            string[] UserName = new string[2] { infoFirst, infoLast };
+            string[] UserName = new string[2] { infoFirst , infoLast };
+            var userName2 = string.Join(",", UserName);
 
-            var fullName = string.Format("Hello {0} {1}", infoFirst, infoLast);
+            string fullName = string.Format("Hello {0} {1}", infoFirst , infoLast);
 
             Console.WriteLine(fullName);
-            Console.WriteLine(UserName);
+            Console.WriteLine(userName2);
 
 
         }
