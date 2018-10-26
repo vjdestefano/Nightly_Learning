@@ -12,37 +12,45 @@ namespace Sandbox
         {
             var user = new User();
 
-            user.GetUserInfo();
+            string userNameData = user.GetUserInfo();
+            string arrayTested = user.arrayTest(userNameData);
+           
         }
     }
 
     public class User
     {
-        
 
-        public void GetUserInfo()
+
+        public string GetUserInfo()
         {
 
             Console.WriteLine("Please write your first name!");
             string infoFirst = Console.ReadLine();
-           
+
             Console.WriteLine("Please write your last name!");
             string infoLast = Console.ReadLine();
 
 
-            string[] UserName = new string[2] { infoFirst , infoLast };
-            var userName2 = string.Join(",", UserName);
+            string[] UserName = new string[2] { infoFirst, infoLast };
+            string userName2 = string.Join(" ", UserName);
 
-            string fullName = string.Format("Hello {0} {1}", infoFirst , infoLast);
+            string fullName = string.Format("Hello {0} {1}", infoFirst, infoLast);
 
-            Console.WriteLine(fullName);
-            Console.WriteLine(userName2);
+            //Console.WriteLine(fullName);
+            
 
+            return userName2;
+        }
+
+        public string arrayTest(string UserName)
+        {
+            Console.WriteLine(UserName);
+            return UserName;
 
         }
 
-
-
+        
     }
 
 
