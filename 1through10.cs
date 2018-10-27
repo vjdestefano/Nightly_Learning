@@ -9,10 +9,10 @@ namespace exercises1
 
     public class checkNumber{
 
+        private int priv;
+
         public bool check()
         {
-
-
 
             Console.WriteLine("please enter a number 1 though 10");
             var userNum = Console.ReadLine();
@@ -32,9 +32,17 @@ namespace exercises1
             }
         }
 
-
+        public int writeThis(string var)
+        {
+            priv = Convert.ToInt32(var);
+            return priv;
+        }
 
 }
+
+
+
+    
 
 
 
