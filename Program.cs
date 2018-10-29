@@ -14,6 +14,16 @@ namespace First_App
 
         static void Main()
         {
+
+
+
+
+            var person = new Person();
+            string personName = person.insertName();
+            person.PersonName(personName);
+
+
+
             //var john = new Person();
             //john.FirstName = "John";
             //john.LastName = "Smith";
@@ -21,28 +31,28 @@ namespace First_App
 
             //creating an instance of the Calculator class in memory with "new" keyword
             //stored within the calculator variable
-            Calculator calculator = new Calculator();
-            var result = calculator.Add(3, 4);
-            Console.WriteLine(result);
+            //Calculator calculator = new Calculator();
+            //var result = calculator.Add(3, 4);
+            //Console.WriteLine(result);
 
 
-            var firstname = "Vinny";
-            var lastname = "DeStefano";
+            //var firstname = "Vinny";
+            //var lastname = "DeStefano";
 
-            var fullname = firstname + " " + lastname;
+            //var fullname = firstname + " " + lastname;
             //string.format takes in place holders with {i}
-            var myFullName = string.Format("My name is  {0} {1}", firstname, lastname);
+            //var myFullName = string.Format("My name is  {0} {1}", firstname, lastname);
 
             //array data isn't show... displays System.String[]
-            var names = new string[3] { "John", "Jack", "Mary" };
+            //var names = new string[3] { "John", "Jack", "Mary" };
 
             //it will concatonate the string  with commas inbetween, and remember string are immutable
-            var formatedNames = string.Join(",", names);
+            //var formatedNames = string.Join(",", names);
 
-            Console.WriteLine(fullname);
-            Console.WriteLine(myFullName);
-            Console.WriteLine(names);
-            Console.WriteLine(formatedNames);
+//            Console.WriteLine(fullname);
+  //          Console.WriteLine(myFullName);
+    //        Console.WriteLine(names);
+      //      Console.WriteLine(formatedNames);
 
 
 
@@ -52,17 +62,50 @@ namespace First_App
     }
 
 
-    public class Person{
+    public class Person {
 
         public string FirstName;
         public string LastName;
 
 
-        public void Introduce()
+        public void Introduce(string FirstName, string LastName)
         {
             Console.WriteLine("My name is " + FirstName + " " + LastName);
         }
 
+        public string insertName()
+        {
+            FirstName = Console.ReadLine();
+            LastName = Console.ReadLine();
+
+            Introduce(FirstName: FirstName, LastName: LastName);
+
+            string nameDummy = string.Format("{0} {1}", FirstName, LastName);
+
+
+            return nameDummy;
+
+
+        }
+
+        public void PersonName(string name)
+        {
+
+            char[] testChar = new char[100];
+
+            for (var i = 0; i < name.Length; i++)
+            {
+                var t = name[i];
+                testChar[i] = t;
+                Console.WriteLine(testChar);
+            }
+
+            
+
+
+
+        }
+    
 
 
         public static int Calcultor(int a, int b)
@@ -71,6 +114,11 @@ namespace First_App
         }
 
     }
+
+
+
+
+
 
 
 
