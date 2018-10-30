@@ -15,12 +15,16 @@ namespace First_App
         static void Main()
         {
 
+            var testCount = new divisable();
+            testCount.count();
+
+            var ok = new ok();
+            ok.calcSum();
 
 
-
-            var person = new Person();
-            string personName = person.insertName();
-            person.PersonName(personName);
+            //var person = new Person();
+            //string personName = person.insertName();
+            //person.PersonName(personName);
 
 
 
@@ -117,7 +121,72 @@ namespace First_App
 
 
 
+    public class divisable
+    {
 
+        public void count()
+        {
+            int properlyDivisable = 0;
+            int max = 100;
+            for (var i = 0; i < max; i++)
+            {
+                if( i % 3 == 0)
+                {
+                    properlyDivisable++;
+
+                } else
+                {
+                    continue;
+
+                }
+
+            }
+
+            Console.WriteLine(properlyDivisable);
+
+        }
+
+    }
+
+
+
+
+
+    public class ok
+    {
+       
+
+        public void calcSum()
+        {
+            int count = 0;
+            for (var i = 0; ; i++)
+            {
+                
+                string number = Console.ReadLine();
+                if(number == "ok")
+                {
+                    break;
+                }
+                else
+                {
+                    var test = Convert.ToInt32(number);
+                    count = count + test;
+                    Console.WriteLine(count);
+                    
+                }
+
+
+            }
+            
+            
+
+            
+
+
+        }
+
+
+    }
 
 
 
