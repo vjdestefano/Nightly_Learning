@@ -21,44 +21,7 @@ namespace First_App
             var ok = new ok();
             ok.calcSum();
 
-
-            //var person = new Person();
-            //string personName = person.insertName();
-            //person.PersonName(personName);
-
-
-
-            //var john = new Person();
-            //john.FirstName = "John";
-            //john.LastName = "Smith";
-            //john.Introduce();
-
-            //creating an instance of the Calculator class in memory with "new" keyword
-            //stored within the calculator variable
-            //Calculator calculator = new Calculator();
-            //var result = calculator.Add(3, 4);
-            //Console.WriteLine(result);
-
-
-            //var firstname = "Vinny";
-            //var lastname = "DeStefano";
-
-            //var fullname = firstname + " " + lastname;
-            //string.format takes in place holders with {i}
-            //var myFullName = string.Format("My name is  {0} {1}", firstname, lastname);
-
-            //array data isn't show... displays System.String[]
-            //var names = new string[3] { "John", "Jack", "Mary" };
-
-            //it will concatonate the string  with commas inbetween, and remember string are immutable
-            //var formatedNames = string.Join(",", names);
-
-//            Console.WriteLine(fullname);
-  //          Console.WriteLine(myFullName);
-    //        Console.WriteLine(names);
-      //      Console.WriteLine(formatedNames);
-
-
+            Console.WriteLine("this is was the commit!");
 
         }
 
@@ -175,16 +138,9 @@ namespace First_App
                     
                 }
 
-
             }
-            
-            
-
-            
-
 
         }
-
 
     }
 
