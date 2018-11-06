@@ -1,165 +1,172 @@
 ﻿//Vincent DeStefano
 //Implementing C# into my skill set
 
-
 using System;
-using First_App.Math;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace First_App
+namespace Arrays
 {
-
     class Program
     {
-
-
-        static void Main()
+        static void Main(string[] args)
         {
+            var sentence = "This is going to be a really really really really really long text. ";
+            var test = thisDate.sentenceManipulator(sentence, 25);
+            Console.WriteLine(test);
 
-            var testCount = new divisable();
-            testCount.count();
-
-            var ok = new ok();
-            ok.calcSum();
-
-            Console.WriteLine("this is was the commit!");
 
         }
-
-
     }
 
 
-    public class Person {
-
-        public string FirstName;
-        public string LastName;
-
-
-        public void Introduce(string FirstName, string LastName)
-        {
-            Console.WriteLine("My name is " + FirstName + " " + LastName);
-        }
-
-        public string insertName()
-        {
-            FirstName = Console.ReadLine();
-            LastName = Console.ReadLine();
-
-            Introduce(FirstName: FirstName, LastName: LastName);
-
-            string nameDummy = string.Format("{0} {1}", FirstName, LastName);
-
-
-            return nameDummy;
-
-
-        }
-
-        public void PersonName(string name)
-        {
-
-            char[] testChar = new char[100];
-
-            for (var i = 0; i < name.Length; i++)
-            {
-                var t = name[i];
-                testChar[i] = t;
-                Console.WriteLine(testChar);
-            }
-
-            
-
-
-
-        }
-    
-
-
-        public static int Calcultor(int a, int b)
-        {
-            return a + b;
-        }
-
-    }
-
-
-
-    public class divisable
+    public class arrayMethods
     {
 
-        public void count()
+        public int[] testArray = new[] { 2, 3, 4, 5, 6 };
+
+
+        public void doThis()
         {
-            int properlyDivisable = 0;
-            int max = 100;
-            for (var i = 0; i < max; i++)
-            {
-                if( i % 3 == 0)
-                {
-                    properlyDivisable++;
+            //length
+            Console.WriteLine("Lenght: " + testArray.Length);
 
-                } else
-                {
-                    continue;
+            //IndexOf()
+            var index = Array.IndexOf(testArray, 3);
 
-                }
+            Console.WriteLine("index of item at 3: " + index);
 
-            }
 
-            Console.WriteLine(properlyDivisable);
+            Array.Clear(testArray, 0, 3);
+
+            Console.WriteLine("Effects of Clear()");
+
+            foreach (var n in testArray)
+                Console.WriteLine(n);
+
+
+
+
+            int[] another = new int[3];
+            Array.Copy(testArray, another, 3);
+
+            foreach (var n in another)
+                Console.WriteLine(n);
+
+
 
         }
 
-    }
 
-
-
-
-
-    public class ok
-    {
-       
-
-        public void calcSum()
+        public void listThings()
         {
-            int count = 0;
-            for (var i = 0; ; i++)
-            {
-                
-                string number = Console.ReadLine();
-                if(number == "ok")
-                {
-                    break;
-                }
-                else
-                {
-                    var test = Convert.ToInt32(number);
-                    count = count + test;
-                    Console.WriteLine(count);
-                    
-                }
 
-            }
+
+            var numbers = new List<int>() { 1, 2, 3, 4 };
+            numbers.Add(1);
+            numbers.AddRange(new int[3] { 5, 6, 7 });
+            foreach (var number in numbers)
+                Console.WriteLine(number);
+
 
         }
 
+
     }
 
 
-
-
-    public class Arraytest
+    public class thisDate
     {
+        public void thisDateNow()
+        {
 
-        int[] numberArray = new int[10];
+            var dateTime = new DateTime(2015, 2, 2);
+            var now = DateTime.Now;
+            var today = DateTime.Today;
 
-        // use the @ for a verbatim string instead of an indexed string
-        string verbatimPath = @"c:\projects\project1\folder1";
+            Console.WriteLine(now.ToLongDateString());
+            Console.WriteLine(now.ToString("yyyy-MM-dd"));
+
+
+        }
+
+        public void timeSpanned()
+        {
+
+            var timeSpan = new TimeSpan(1, 2, 3);
+
+            var timeSpan1 = new TimeSpan(1, 0, 0);
+            TimeSpan.FromHours(1);
+
+
+        }
+
+        public void stringstome()
+        {
+
+            var fullname = "Vincent DeStefano ";
+
+            Console.WriteLine("Trim: '{0}'", fullname.Trim());
+
+            Console.WriteLine("To Upper: '{0}'", fullname.Trim().ToUpper());
+
+
+            var index = fullname.IndexOf(' ');
+
+            var firstName = fullname.Substring(0, index);
+
+            var lastName = fullname.Substring(index + 1);
+
+            Console.WriteLine("First Name: '{0}' and Last Name: '{1}'", firstName, lastName);
+
+
+            var name = fullname.Split(' ');
+
+            var str = "25";
+            var age = Convert.ToSByte(str);
+
+            Console.WriteLine(age);
+
+            float money = 90.99f;
+            string cash = money.ToString("C");
+            Console.WriteLine(cash);
+        }
+
+        public static string sentenceManipulator(string sentence, int maxLenght = 20)
+        {
+
+            if (sentence.Length < maxLenght)
+            {
+                return sentence;
+            }
+            else
+            {
+
+                var words = sentence.Split(' ');
+                var totalCharacters = 0;
+
+                var summaryWords = new List<string>();
+
+                foreach (var word in words)
+                {
+                    summaryWords.Add(word);
+                    totalCharacters += word.Length + 1;
+                    if (totalCharacters > maxLenght)
+                    {
+                        break;
+                    }
+                }
+                var summary = String.Join(" ", summaryWords) + "...";
+                return summary;
+            }
 
 
 
+
+        }
     }
-
 
 
 }
-
