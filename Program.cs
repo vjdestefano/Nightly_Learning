@@ -22,6 +22,55 @@ namespace Arrays
     }
 
 
+    public class exercise4
+    {
+
+        public void camelCaseMe()
+        {
+            var input = Console.ReadLine();
+
+            var inputToArray = input.Split(' ');
+
+            var arrayToList = new List<string>();
+
+            var index = 0;
+
+            foreach (var word in inputToArray)
+            {
+                word.ToLower();
+
+                var firstLetter = word.Substring(index, 1);
+
+                var endWord = word.Substring(1).ToLower();
+
+                var UpperFirst = firstLetter.ToUpper();
+
+                var cameled = UpperFirst + endWord;
+
+                arrayToList.Add(cameled);
+
+            }
+            string wordCSV = string.Join("", arrayToList);
+
+            Console.WriteLine(wordCSV);
+
+
+
+
+
+
+
+
+        }
+
+
+
+    }
+
+
+
+
+
     public class arrayMethods
     {
 
