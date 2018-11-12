@@ -6,9 +6,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Arrays
 {
+
+
+
+
+
+
+
     class Program
     {
         static void Main(string[] args)
@@ -20,6 +28,66 @@ namespace Arrays
 
         }
     }
+
+    public class directoryOrFile
+    {
+        public static int NumOfWords(string path)
+        {
+            var readlines = File.ReadAllText(path);
+
+            int numOf = 0;
+
+            Console.WriteLine(readlines);
+
+            var fileDataToArray = readlines.Split(' ');
+
+            foreach (var word in fileDataToArray)
+            {
+                numOf++;
+
+            }
+            Console.WriteLine(numOf);
+
+
+            return numOf;
+
+
+
+
+
+        }
+
+        public static string GetPathName()
+        {
+            Console.WriteLine("Please Give the name of the file that you are looking for");
+            var name = Console.ReadLine();
+
+            var files = Directory.GetFiles(@"C:\Users\VINNY\Desktop\text", name + ".*", SearchOption.AllDirectories);
+
+            string fileName;
+
+            foreach (var file in files)
+            {
+
+                fileName = file.ToString();
+
+                return fileName;
+            }
+
+            string path = files.ToString();
+            return path;
+
+
+        }
+
+
+
+
+    }
+
+
+
+
 
 
     public class exercise4
@@ -53,17 +121,8 @@ namespace Arrays
             string wordCSV = string.Join("", arrayToList);
 
             Console.WriteLine(wordCSV);
-
-
-
-
-
-
-
-
+            
         }
-
-
 
     }
 
