@@ -70,6 +70,7 @@ namespace APIcaller
         
         public void SetName(string userName)
         {
+<<<<<<< HEAD
             if (!string.IsNullOrEmpty(userName))
             {
                 _userName = userName;
@@ -77,8 +78,16 @@ namespace APIcaller
             {
                 Console.WriteLine("please enter a valid User Name!");
             }
+=======
+            var user = new User();
+
+            string userNameData = user.GetUserInfo();
+            string arrayTested = user.arrayTest(userNameData);
+           
+>>>>>>> c1429559cef65fcad70820fa41383d2709f8a0fa
         }
 
+<<<<<<< HEAD
         public string GetName(string userName)
         {
             return userName;
@@ -90,10 +99,25 @@ namespace APIcaller
             var regexItem = new Regex("^[a-zA-Z0-9 ]*$");
             Console.WriteLine("Please type your desired user name");
             var userInputName = Console.ReadLine();
+=======
+    public class User
+    {
+
+
+        public string GetUserInfo()
+        {
+
+            Console.WriteLine("Please write your first name!");
+            string infoFirst = Console.ReadLine();
+
+            Console.WriteLine("Please write your last name!");
+            string infoLast = Console.ReadLine();
+>>>>>>> c1429559cef65fcad70820fa41383d2709f8a0fa
 
             while (userInputName.Length <= 5) 
             {
 
+<<<<<<< HEAD
                 Console.WriteLine(userInputName.Length <= 5);
 
                 Console.WriteLine(regexItem.IsMatch(userInputName));
@@ -103,8 +127,25 @@ namespace APIcaller
 
                 userInputName = Console.ReadLine();
             }
+=======
+            string[] UserName = new string[2] { infoFirst, infoLast };
+            string userName2 = string.Join(" ", UserName);
 
+            string fullName = string.Format("Hello {0} {1}", infoFirst, infoLast);
 
+            //Console.WriteLine(fullName);
+            
+
+            return userName2;
+        }
+>>>>>>> c1429559cef65fcad70820fa41383d2709f8a0fa
+
+        public string arrayTest(string UserName)
+        {
+            Console.WriteLine(UserName);
+            return UserName;
+
+<<<<<<< HEAD
             Console.WriteLine("Please type your desired password");
             var userInputPass = Console.ReadLine();
 
@@ -119,6 +160,12 @@ namespace APIcaller
 
             _userDetails.Add(userInputName);
             _userDetails.Add(userInputPass);
+=======
+        }
+
+        
+    }
+>>>>>>> c1429559cef65fcad70820fa41383d2709f8a0fa
 
             Console.WriteLine("Username: {0} Password:{1}", _userDetails[0], _userDetails[1]);
 
