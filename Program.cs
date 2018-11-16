@@ -63,8 +63,6 @@ namespace First_App
             Console.WriteLine("My name is " + FirstName + " " + LastName);
         }
 
-
-
         public static int Calcultor(int a, int b)
         {
             return a + b;
